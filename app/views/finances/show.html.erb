@@ -1,0 +1,82 @@
+
+<p><div class="row">
+   <div class="col-md-3 col-md-offset-1">
+     <strong>Supplier Name :</strong>
+   </div>
+   <div class="col-md-8">
+     <%= @finance.supplierName %>
+   </div>
+  </div>
+</p>
+<p>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <strong>Email :<strong>
+    </div>
+      <div class="col-md-8">
+        <%= @finance.email %>
+      </div>
+  </div>
+</p>
+<p>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <strong>Ingredient</strong>
+    </div>
+    <div class="col-md-8">
+      <%= @finance.Ingredient %>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <strong>Bank Name<strong>
+    </div>
+      <div class="col-md-8">
+        <%= @finance.BankName %>
+      </div>
+  </div>
+</p>
+
+
+<p>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <strong>Account Detail<strong>
+    </div>
+      <div class="col-md-8">
+        <%= @finance.accountNumber %>
+      </div>
+  </div>
+</p>
+
+<p>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <strong>Amount :<strong>
+    </div>
+    <div class="col-md-8">
+      <%= @finance.currency %>
+      <%= @finance.spend %>
+    </div>
+  </div>
+</p>
+
+<p>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <strong>Phone Number:<strong>
+    </div>
+     <div class="col-md-8">
+       <% @finance.supplierNumber%>
+     </div>
+  </div>
+</p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= link_to 'Back', finances_path %>
+  </div>
+</div>

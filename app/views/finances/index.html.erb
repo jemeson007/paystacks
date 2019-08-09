@@ -1,0 +1,50 @@
+<h1> Suppliers' Listing  </h1>
+<div class="container-fluid" align="center">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <nav class="navbar navbar-dark bg-dark">
+        <%= link_to 'Home', welcome_index_path %>  <br>
+        <%= link_to 'Add Supplier', new_finance_path %>
+      </nav> 
+    </div>
+  </div>
+  
+</div>
+
+
+<table class="table table-hover">
+  <tr>
+    <th>Supplier Name</th>
+    <th>Email</th>
+    <th>Bank Name</th>
+    <th>Ingredient</th>
+    <th>sub Account Number</th>
+    <th>Money to Pay</th>
+    <th>Cell Phone</th>
+    <th colspan = "3"></th>
+  </tr>
+
+  <% @finances.each do |finance| %>
+    <tr>
+    
+      <td><%= finance.supplierName %></td>
+      <td><%= finance.email %></td>
+      <td><%= finance.BankName %></td>
+      <td><%= finance.Ingredient %></td>
+      <td><%= finance.accountNumber %></td>
+      <td><%= finance.currency %><%= finance.spend.round(2)%></td>
+      <td><%= link_to 'Show', finance_path(finance) %></td>
+      <td><%= link_to "Pay Supplier", "https://paystack.com/pay/paysupplier", :target => "_blank" %></td>  
+      
+      <% if finance.user == current_user %>
+        
+      	<td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+        <td><%= link_to 'Loose Supplier', finance_path(finance), method: :delete, data: {confirm: 'Are you Sure?'} %></td>
+      	
+      <% end %>
+      
+    </tr>
+  <% end %>
+
+ 
+</table>
