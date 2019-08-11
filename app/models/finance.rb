@@ -7,7 +7,7 @@ class Finance < ApplicationRecord
 
 
 	def spend
-		return amount * 1.015
+		return ((amount * 1.015) + 100)
 	end
 
 end
